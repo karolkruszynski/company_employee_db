@@ -1,5 +1,9 @@
 # Baza Danych FirmaXYZ
 
+## Baza Danych
+
+### Baze danych można zaimplementować kopiując polecenia z pliku db.sql
+
 ## Tabele
 
 ### 1. Employees
