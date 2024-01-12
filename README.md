@@ -26,6 +26,14 @@ Tabela zawierająca informacje o projektach w firmie XYZ.
 - **EndDate:** Data zakończenia projektu (typ danych: DATE).
 - **AssignedEmployeeID:** ID pracownika przypisanego do projektu (typ danych: INTEGER).
 
+- ### 3. ProjectsCustomers
+Tabela zawierająca informacje o klientach oraz przypisanych do nich projektach z naszej firmy XYZ.
+
+#### Struktura Tabeli:
+- **CustomerID:** Unikalny identyfikator projektu (typ danych: INTEGER).
+- **ProjectID:** Klucz obcy połączony z takim samym kluczem głównym z tabeli 2. Projects (typ danych: INTEGER).
+- **CustomerName:** Nazwa firmy klienta (typ danych: VARCHAR(255)).
+
 ## Zadania SQL
 Zadania znajdują się w plikach odpowiednio:
 
