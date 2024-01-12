@@ -73,3 +73,42 @@ VALUES
     ('Performance Appraisal System', '2023-10-01', '2024-03-31', 3),
     ('Product Training Sessions', '2023-11-10', '2024-04-30', 4),
     ('Sustainability Initiative', '2023-12-01', '2024-05-31', 5);
+
+-- Tworzenie tabeli ProjectsCustomers
+CREATE TABLE ProjectsCustomers
+(
+    ProjectID INT,
+    CustomerID INT,
+    PRIMARY KEY (CustomerID),
+    FOREIGN KEY (ProjectID) REFERENCES Projects(ProjectID)
+);
+INSERT INTO ProjectsCustomers (ProjectID, CustomerID) VALUES
+(1, 1),
+(1, 2),
+(2, 3),
+(4, 4),
+(5, 5),
+(6, 6);
+
+-- Dodanie kolumny CustomerName do tabeli ProjectsCustomers
+ALTER TABLE ProjectsCustomers
+ADD COLUMN CustomerName VARCHAR(255);
+
+-- Wypełnienie nowej kolumny CustomerName przykładowymi danymi
+UPDATE ProjectsCustomers
+SET CustomerName = CASE 
+    WHEN CustomerID = 1 THEN 'Mahindra'
+    WHEN CustomerID = 2 THEN 'ABT Cupra'
+    WHEN CustomerID = 3 THEN 'Mercedes-Benz'
+    WHEN CustomerID = 4 THEN 'BMW'
+    WHEN CustomerID = 5 THEN 'Samsung'
+    WHEN CustomerID = 6 THEN 'Nokia'
+    ELSE NULL
+END;
+
+-- -- Dodanie trzech rekordów do tabeli Employees
+INSERT INTO Employees (EmployeeID, FirstName, LastName, Department, Salary)
+VALUES
+(101, 'John', 'Doe', 'IT', 70000.00),
+(102, 'Jane', 'Smith', 'HR', 60000.50),
+(103, 'Bob', 'Johnson', 'Finance', 80000.75);
